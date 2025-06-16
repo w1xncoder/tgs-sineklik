@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TGS Sineklik - Ürünler</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f9fb;
+    color: #333;
+  }
+  header {
+    background-color: #2464ec;
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+  }
+  main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    color: #2464ec;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+  }
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-info h2 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    color: #2464ec;
+  }
+  .product-info p {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #555;
+  }
+  @media(max-width: 480px) {
+    .product-image {
+      height: 150px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  TGS Sineklik - Ürünler
+</header>
+
+<main>
+  <h1>Sineklik Katalog</h1>
+  <div class="catalog">
+
+    <div class="product-card">
+      <img src="kedi-sineklik.jpg" alt="Kedi Sineklik" class="product-image" />
+      <div class="product-info">
+        <h2>Kedi Sinekliği</h2>
+        <p>Evcil dostlarınız için özel olarak tasarlanmış dayanıklı ve estetik sineklik modelleri.</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="plise-sineklik.jpg" alt="Plise Sineklik" class="product-image" />
+      <div class="product-info">
+        <h2>Plise Sineklik</h2>
+        <p>Katlanabilir, yer kaplamayan pratik sineklik modelleri ile yaşam alanlarınızı koruyun.</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="menteseli-sineklik.jpg" alt="Menteşeli Sineklik" class="product-image" />
+      <div class="product-info">
+        <h2>Menteşeli Sineklik</h2>
+        <p>Sağlam kasası ve kolay kullanımı ile her türlü pencere ve kapıya uygun menteşeli sineklikler.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
