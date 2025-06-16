@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>İletişim - TGS Sineklik</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #fff;
+    color: #2464ec;
+  }
+  header {
+    background-color: #2464ec;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+  main {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  main h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+  main p {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+  a {
+    color: #2464ec;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .sosyal-btnlar {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #2464ec;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #1b4cb4;
+  }
+  .btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Fotoğraf stili */
+  .iletisim-foto {
+    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    main {
+      margin: 30px 15px;
+    }
+    .btn {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  TGS Sineklik - İletişim
+</header>
+
+<main>
+  <h1>Bizimle İletişime Geçin</h1>
+  <p>Email: <a href="mailto:info@tgssineklik.net.tr">info@tgssineklik.net.tr</a></p>
+  <p>Telefon: <a href="tel:+905321234567">+90 532 123 45 67</a></p>
+
+  <div class="sosyal-btnlar">
+    <a href="https://wa.me/905321234567" target="_blank" rel="noopener" class="btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/tgssineklik" target="_blank" rel="noopener" class="btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      Instagram
+    </a>
+  </div>
+
+  <!-- Fotoğraf buraya eklendi -->
+  <img class="iletisim-foto" src="https://aluaks.com/eeckagru/2020/04/ileti%C5%9Fim-banner.png" alt="TGS Sineklik Fotoğrafı" />
+
+</main>
+
+</body>
+</html>
