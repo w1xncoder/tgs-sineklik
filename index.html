@@ -1,182 +1,341 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TGS Sineklik</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #2464ec;
-    }
-    header {
-      background-color: #2464ec;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-area img {
-      width: 40px;
-      height: 40px;
-    }
-    .logo-text {
-      font-size: 22px;
-      font-weight: bold;
-    }
+<link rel="icon" href="favicon.png" type="image/png" />
 
-    /* Hamburger menü */
-    .menu-toggle {
-      display: flex;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TGS Sineklik</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+  }
+
+  header {
+    background-color: #2464ec;
+    font-weight: 700;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1001; /* Üstte olsun */
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+  }
+  .logo-area img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .logo-text {
+    color: white;
+    font-size: 22px;
+    margin-left: 12px;
+  }
+  nav {
+    position: relative;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+  }
+  nav ul li a:hover {
+    opacity: 0.8;
+  }
+
+  /* Hamburger Menü Butonu */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .menu-toggle div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  main {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  main h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #2464ec;
+  }
+  main h2 {
+    font-size: 36px;
+    margin-bottom: 18px;
+    color: #333;
+  }
+  main p {
+    font-size: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .info-area {
+    background-color: #d3e0ff;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    border-radius: 8px;
+    gap: 30px;
+  }
+  .info-area img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .info-text {
+    max-width: 650px;
+    text-align: left;
+    color: #333;
+  }
+  .info-text p {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .info-text .btn {
+    background-color: #2464ec;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .info-text .btn:hover {
+    background-color: #1b4cb4;
+  }
+
+  .sineklik-modelleri {
+    background: #f9fafb;
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    border-radius: 8px;
+  }
+  .sineklik-modelleri h2 {
+    font-size: 32px;
+    color: #2464ec;
+    margin-bottom: 40px;
+  }
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+  .model-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    /* Gölge kaldırıldı performans için */
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+    transition: transform 0.3s ease;
+  }
+  .model-card:hover {
+    transform: translateY(-8px);
+  }
+  .model-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .model-card h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  .model-card p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .urunler-btn {
+    margin-top: 30px;
+    background-color: #2464ec;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .urunler-btn:hover {
+    background-color: #1b4cb4;
+  }
+
+  footer {
+    background-color: #2464ec;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+    .info-area {
       flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 22px;
-      cursor: pointer;
-    }
-    .menu-toggle div {
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
-    }
-
-    /* Yan menü */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 250px;
-      height: 100%;
-      background-color: #2464ec;
-      z-index: 2000;
-      padding: 30px 20px;
-      box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
-      transition: right 0.3s ease;
-    }
-    .side-menu ul {
-      list-style: none;
-      margin-top: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .side-menu ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: 600;
-    }
-    .side-menu ul li a:hover {
-      text-decoration: underline;
-    }
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 28px;
-      background: none;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* Sayfa karartması */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-      display: none;
-      z-index: 1500;
-    }
-    .overlay.show {
-      display: block;
-    }
-    .side-menu.show {
-      right: 0;
-    }
-
-    /* Sayfa içeriği boşluk */
-    main {
-      padding-top: 80px;
       text-align: center;
     }
-  </style>
+    .info-text {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    /* Hamburger menüyü yandan açılan tam sayfa yüksekliğinde yapıyoruz */
+    nav ul {
+      flex-direction: column;
+      gap: 15px;
+      background-color: #2464ec;
+      position: fixed; /* sabit konum */
+      top: 0;
+      right: -250px; /* görünmez halde sağda başlıyor */
+      height: 100vh;
+      width: 250px;
+      padding-top: 70px; /* header yüksekliği kadar boşluk */
+      border-radius: 0 0 0 8px;
+      box-shadow: -2px 0 6px rgba(0,0,0,0.3);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    nav ul.show {
+      right: 0; /* görünür hale getir */
+    }
+    nav ul li a {
+      font-size: 18px;
+      padding: 15px 0;
+      display: block;
+    }
+    .menu-toggle {
+      display: flex;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-area">
-      <img src="logo.png" alt="Logo" loading="lazy">
-      <div class="logo-text">TGS Sineklik</div>
-    </div>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </header>
-
-  <!-- Yan Menü -->
-  <div class="side-menu" id="side-menu">
-    <button class="close-btn" id="close-menu">&times;</button>
-    <ul>
-      <li><a href="index.html">Anasayfa</a></li>
-      <li><a href="hakkimizda.html">Hakkımızda</a></li>
-      <li><a href="urunler.html">Ürünler</a></li>
-      <li><a href="galeri.html">Galeri</a></li>
-      <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
+<header>
+  <div class="logo-area">
+    <img src="logo.png" alt="TGS Sineklik Logo" loading="lazy" />
+    <div class="logo-text">TGS Sineklik</div>
   </div>
-  <div class="overlay" id="overlay"></div>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="menu">
+      <li><a href="https://tgssineklik.net.tr/">Anasayfa</a></li>
+      <li><a href="https://tgssineklik.net.tr/hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="https://tgssineklik.net.tr/urunler.html">Ürünler</a></li>
+      <li><a href="https://tgssineklik.net.tr/iletisim.html">İletişim</a></li>
+      <li><a href="https://tgssineklik.net.tr/galeri.html">Galeri</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Ana İçerik -->
-  <main>
-    <h1>Hoş geldiniz</h1>
-    <p>TGS Sineklik sayfasına giriş yaptınız.</p>
-  </main>
+<main>
+  <h1>En İyi Sineklik Sistemleri</h1>
+  <h2>Ankara'nın En Sevilen Sineklik Markası</h2>
+  <p>
+    Aradığınız en güvenilir kedi sinekliği plise sineklik modelleri, menteşeli sineklik çeşitleri ihtiyaçlarınız için en uygun fiyatlı ve en kaliteli çözümleri sunuyoruz.
+  </p>
+</main>
 
-  <!-- Menü scripti -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const sideMenu = document.getElementById('side-menu');
-    const closeMenu = document.getElementById('close-menu');
-    const overlay = document.getElementById('overlay');
+<section class="info-area">
+  <img src="https://www.sineklikler.com/wp-content/uploads/elementor/thumbs/sineklik-qis8frd3ruva4gzxyxjcbg4wlhmot9525w8t9zp47c.jpg" alt="TGS Sineklik Fotoğraf" loading="lazy" />
+  <div class="info-text">
+    <p>
+      Aradığınız en güvenilir kedi sinekliği, plise sineklik modelleri, menteşeli sineklik çeşitleri ihtiyaçlarınız için en uygun fiyatlı ve en kaliteli çözümleri sunuyoruz.
+    </p>
+    <a href="https://tgssineklik.net.tr/hakkimizda.html" class="btn">Hakkımızda</a>
+  </div>
+</section>
 
-    menuToggle.addEventListener('click', () => {
-      sideMenu.classList.add('show');
-      overlay.classList.add('show');
-    });
+<section class="sineklik-modelleri">
+  <h2>Sineklik Modellerimiz</h2>
+  <div class="models-grid">
+    <div class="model-card">
+      <img src="pileli2.jpg" alt="Pileli Sineklik" loading="lazy" />
+      <h3>Pileli / Plise Sineklik</h3>
+      <p>Katlanabilir, estetik ve pratik modeller. 1 yıl garanti.</p>
+    </div>
+    <div class="model-card">
+      <img src="menteşeli2.jpg" alt="Menteşeli Sineklik" loading="lazy" />
+      <h3>Menteşeli Sineklik</h3>
+      <p>Tüm hava koşullarına dayanıklı kasalı modeller.</p>
+    </div>
+  </div>
+  <a href="https://tgssineklik.net.tr/urunler.html" class="urunler-btn">Tüm Ürünlerimiz</a>
+</section>
 
-    closeMenu.addEventListener('click', () => {
-      sideMenu.classList.remove('show');
-      overlay.classList.remove('show');
-    });
+<footer>
+  © 2025 TGS Sineklik. Tüm hakları saklıdır.
+</footer>
 
-    overlay.addEventListener('click', () => {
-      sideMenu.classList.remove('show');
-      overlay.classList.remove('show');
-    });
-  </script>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Klavye erişilebilirliği için
+  menuToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    }
+  });
+</script>
+
 </body>
 </html>
