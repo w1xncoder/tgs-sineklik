@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<link rel="icon" href="favicon.png" type="image/png" />
-
+  <link rel="icon" href="favicon.png" type="image/png" />
   <meta charset="UTF-8">
   <title>Hakkımızda - TGS Sineklik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +18,26 @@
       color: white;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
     h1 {
       margin: 0;
       font-size: 36px;
+    }
+
+    .back-button {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .container {
@@ -70,6 +84,7 @@
 <body>
 
 <header>
+  <a href="index.html" class="back-button">←</a>
   <h1>TGS Sineklik</h1>
 </header>
 
