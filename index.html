@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="tr">
 <head>
 <link rel="icon" href="favicon.png" type="image/png" />
@@ -21,8 +21,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 1001; /* Üstte olsun */
   }
   .logo-area {
     display: flex;
@@ -224,32 +222,25 @@
       text-align: center;
       max-width: 100%;
     }
-
-    /* Hamburger menüyü yandan açılan tam sayfa yüksekliğinde yapıyoruz */
     nav ul {
       flex-direction: column;
       gap: 15px;
       background-color: #2464ec;
-      position: fixed; /* sabit konum */
-      top: 0;
-      right: -250px; /* görünmez halde sağda başlıyor */
-      height: 100vh;
-      width: 250px;
-      padding-top: 70px; /* header yüksekliği kadar boşluk */
-      border-radius: 0 0 0 8px;
-      box-shadow: -2px 0 6px rgba(0,0,0,0.3);
-      transition: right 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      padding-left: 20px;
-      padding-right: 20px;
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      width: 180px;
+      border-radius: 5px;
+      padding: 10px 0;
+      display: none;
+      z-index: 10;
     }
     nav ul.show {
-      right: 0; /* görünür hale getir */
+      display: flex;
     }
     nav ul li a {
       font-size: 18px;
-      padding: 15px 0;
+      padding: 10px 20px;
       display: block;
     }
     .menu-toggle {
