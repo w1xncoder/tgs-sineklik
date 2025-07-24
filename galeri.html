@@ -14,12 +14,6 @@
     padding-bottom: 60px;
   }
 
-  .content-wrapper {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
   header {
     background-color: #2464ec;
     color: white;
@@ -27,7 +21,15 @@
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   header a {
@@ -38,6 +40,12 @@
     color: white;
     text-decoration: none;
     font-size: 24px;
+  }
+
+  .content-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 20px 40px 20px; /* header yüksekliği kadar üst boşluk */
   }
 
   section {
