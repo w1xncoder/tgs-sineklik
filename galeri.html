@@ -1,165 +1,146 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Galeri - TGS Sineklik</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #333;
-    padding-bottom: 60px;
-  }
+  <link rel="icon" href="favicon.png" type="image/png" />
 
-  .content-wrapper {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İletişim - TGS Sineklik</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background: #fff;
+      color: #2464ec;
+    }
 
-  header {
-    background-color: #2464ec;
-    color: white;
-    padding: 15px 30px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-  }
-
-  header a {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-  }
-
-  section {
-    margin-top: 40px;
-  }
-
-  h2 {
-    color: #2464ec;
-    margin-bottom: 20px;
-    font-weight: 700;
-    border-bottom: 2px solid #2464ec;
-    padding-bottom: 6px;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .gallery-item {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    background: #f9f9f9;
-    transition: transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-  }
-
-  .gallery-item:hover {
-    transform: scale(1.02);
-  }
-
-  .gallery-item img,
-  .gallery-item video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  footer {
-    background-color: #2464ec;
-    color: white;
-    text-align: center;
-    padding: 16px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  @media(max-width: 600px) {
     header {
-      font-size: 20px;
-      padding: 12px;
+      width: 100%;
+      background-color: #2464ec;
+      padding: 15px 30px;
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
 
-    header a {
-      font-size: 20px;
+    .geri-ok {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
     }
-  }
-</style>
+
+    main {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 80px 20px 0 20px; /* Header için üst boşluk */
+      text-align: center;
+    }
+
+    main h1 {
+      margin-bottom: 30px;
+      font-size: 36px;
+    }
+
+    main p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    a {
+      color: #2464ec;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .sosyal-btnlar {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #2464ec;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1b4cb4;
+    }
+
+    .btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .iletisim-foto {
+      margin-top: 40px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 480px) {
+      main {
+        margin: 30px 15px;
+      }
+
+      .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="content-wrapper">
-
 <header>
-  <a href="index.html">←</a>
-  Galeri
+  <a class="geri-ok" href="index.html">←</a>
+  TGS Sineklik - İletişim
 </header>
 
-<section>
-  <h2>Fotoğraflar</h2>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="tgs.sineklik.png" alt="Plise Sineklik" loading="lazy" />
-    </div>
-    <div class="gallery-item">
-      <img src="tgsineklik.png" alt="Kedi Sineklik Uygulaması" loading="lazy" />
-    </div>
-    <div class="gallery-item">
-      <img src="foto3.png" alt="Menteşeli Sineklik Modeli" loading="lazy" />
-    </div>
+<main>
+  <h1>Bizimle İletişime Geçin</h1>
+  <p>Email: <a href="mailto:tuncaymtuncay@hotmail.com">tuncaymtuncay@hotmail.com</a></p>
+  <p>Telefon: <a href="tel:+905367918500">+90 536 791 85 00</a></p>
+
+  <div class="sosyal-btnlar">
+    <a href="https://wa.me/905367918500" target="_blank" rel="noopener" class="btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy" />
+      WhatsApp
+    </a>
+    <a href="https://www.instagram.com/tgs.sineklik.tuncay/" target="_blank" rel="noopener" class="btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" loading="lazy" />
+      Instagram
+    </a>
   </div>
-</section>
 
-<section>
-  <h2>Videolar</h2>
-  <div class="gallery">
-    <div class="gallery-item">
-      <video controls poster="video-kapak.jpg" preload="metadata" muted>
-        <source src="tgsvideo1.mp4" type="video/mp4" />
-        Tarayıcınız video öğesini desteklemiyor.
-      </video>
-    </div>
-     <div class="gallery-item">
-      <video controls poster="video-kapak.jpg" preload="metadata" muted>
-        <source src="tgsvideo2.mp4" type="video/mp4" />
-        Tarayıcınız video öğesini desteklemiyor.
-      </video>
-    </div>
-     <div class="gallery-item">
-      <video controls poster="video-kapak.jpg" preload="metadata" muted>
-        <source src="Ankara güdül ilçesinde Ayhan Bey'in balkon sineklik kapatma uygulaması hayırlı uğurlu olsun..mp4" type="video/mp4" />
-        Tarayıcınız video öğesini desteklemiyor.
-      </video>
-    </div>
-</section>
-
-</div>
-
-<footer>
-  © 2025 TGS Sineklik. Tüm hakları saklıdır.
-</footer>
+  <img class="iletisim-foto" src="https://aluaks.com/eeckagru/2020/04/ileti%C5%9Fim-banner.png" alt="TGS Sineklik Fotoğrafı" loading="lazy" />
+</main>
 
 </body>
 </html>
