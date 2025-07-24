@@ -11,7 +11,7 @@
     font-family: Arial, sans-serif;
     background: #fff;
     color: #333;
-    padding-bottom: 60px; /* footer için boşluk */
+    padding-bottom: 60px;
   }
 
   .content-wrapper {
@@ -27,6 +27,17 @@
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
+  }
+
+  header a {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
   }
 
   section {
@@ -90,6 +101,10 @@
       font-size: 20px;
       padding: 12px;
     }
+
+    header a {
+      font-size: 20px;
+    }
   }
 </style>
 </head>
@@ -97,7 +112,10 @@
 
 <div class="content-wrapper">
 
-<header>Galeri</header>
+<header>
+  <a href="index.html">←</a>
+  Galeri
+</header>
 
 <section>
   <h2>Fotoğraflar</h2>
